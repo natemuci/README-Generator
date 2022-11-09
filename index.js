@@ -1,6 +1,5 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const { clear } = require('console');
 
 inquirer
   .prompt([
@@ -27,30 +26,30 @@ inquirer
     },
     {
       type: 'list',
-      name: 'contributers',
-      message: 'Where there any contributers?',
+      name: 'contributors',
+      message: 'Where there any contributors?',
       choices: ['Yes', 'No']
     },
     {
       type: 'input',
       name: 'conName',
-      message: 'What is the name of the contributer?',
+      message: 'What is the name of the contributor?',
     },
     {
       type: 'input',
       name: 'conEmail',
-      message: 'What is the email of your contributer?',
+      message: 'What is the email of your contributor?',
     },
     {
       type: 'input',
       name: 'conGit',
-      message: 'What is the url of the contributer?',
+      message: 'What is the url of the contributor?',
     },
     {
       type: 'list',
       name: 'license',
       message: 'Which type of license are you using?',
-      choices: ['MIT', 'Drivers', 'Boating', 'Hunting'],
+      choices: ['MIT', 'Drivers', 'Boating', 'Hunting', 'None'],
     },
     {
       type: 'input',
@@ -91,7 +90,7 @@ inquirer
   
   - [Installation](#installation)
   - [Usage](#usage)
-  - [Contributers](#contributers)
+  - [Contributors](#contributors)
   - [License](#license)
   - [Test](#test)
   - [Contact](#contact)
@@ -103,6 +102,7 @@ inquirer
   ## Usage
   
   ${usage}
+
   Provide instructions and examples for use. Include screenshots as needed.
   
   To add a screenshot, create an assets/images folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
@@ -111,7 +111,7 @@ inquirer
       ![alt text](assets/images/screenshot.png)
       
   
-  ## Contributers
+  ## Contributors
 
   Thanks to ${conName} for their contributions, they can be reached at ${conEmail} or ${conGit}
   
@@ -132,6 +132,6 @@ inquirer
 
   ## Contact
   
-  My name is ${name} if you have any questions you can reach me at ${email}
+  My name is ${name} if you have any questions you can reach me at ${email} or on GitHub at ${git}.
   `;
   //the original README.md template was modeled after the codeing bootcamp template from: (https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)

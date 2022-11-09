@@ -126,7 +126,7 @@ inquirer
   ${license}
   
   
-  ## Tests 
+  ## Test 
   
   ${test}
 

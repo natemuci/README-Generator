@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const { clear } = require('console');
 
 inquirer
   .prompt([
@@ -15,21 +16,71 @@ inquirer
       
     },
     {
+      type: 'input',
+      name: 'installation',
+      message: 'What are the steps needed for installation?',
+    },
+    {
+      type: 'input',
+      name: 'usage',
+      message: 'How will the webpage be used',
+    },
+    {
+      type: 'list',
+      name: 'contributers',
+      message: 'Where there any contributers?',
+      choices: ['Yes', 'No']
+    },
+    {
+      type: 'input',
+      name: 'conName',
+      message: 'What is the name of the contributer?',
+    },
+    {
+      type: 'input',
+      name: 'conEmail',
+      message: 'What is the email of your contributer?',
+    },
+    {
+      type: 'input',
+      name: 'conGit',
+      message: 'What is the url of the contributer?',
+    },
+    {
       type: 'list',
       name: 'license',
       message: 'Which type of license are you using?',
       choices: ['MIT', 'Drivers', 'Boating', 'Hunting'],
     },
+    {
+      type: 'input',
+      name: 'test',
+      message: 'test',
+    },
+    {
+      type: 'input',
+      name: 'name',
+      message: 'Please enter your name.',
+    },
+    {
+      type: 'input',
+      name: 'email',
+      message: 'Please enter your email.',
+    },
+    {
+      type: 'input',
+      name: 'git',
+      message: 'What is your GitHub Url?',
+    },
   ])
   .then((data) => {
-    console.log(data);
 
     fs.writeFile("README.md", layOut(data), (err) =>
       (err) ? console.log(err) : console.log('Success!'))
     
   });
 
-  const layOut = ({license, title, description}) =>
+  const layOut = ({license, title, description, installation, name, email, test, usage, conGit, conName, conEmail, git }) =>
   `# ${title}
 
   ## Description
@@ -47,10 +98,11 @@ inquirer
   
   ## Installation
   
-  What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
-  
+  ${installation}
+
   ## Usage
   
+  ${usage}
   Provide instructions and examples for use. Include screenshots as needed.
   
   To add a screenshot, create an assets/images folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
@@ -60,6 +112,8 @@ inquirer
       
   
   ## Contributers
+
+  Thanks to ${conName} for their contributions, they can be reached at ${conEmail} or ${conGit}
   
   List your collaborators, if any, with links to their GitHub profiles.
   
@@ -74,5 +128,10 @@ inquirer
   
   ## Tests 
   
-  ## Contact`;
+  ${test}
+
+  ## Contact
+  
+  My name is ${name} if you have any questions you can reach me at ${email}
+  `;
   //the original README.md template was modeled after the codeing bootcamp template from: (https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)

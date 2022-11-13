@@ -17,44 +17,36 @@ inquirer
     {
       type: 'input',
       name: 'installation',
-      message: 'What are the steps needed for installation?',
+      message: 'What are the commands needed for installation?',
+      default: 'npm i'
     },
     {
       type: 'input',
       name: 'usage',
-      message: 'How will the webpage be used',
+      message: 'Provide instructions for use.',
     },
-    {
-      type: 'list',
-      name: 'contributors',
-      message: 'Where there any contributors?',
-      choices: ['Yes', 'No']
-    },
-    {
-      type: 'input',
-      name: 'conName',
-      message: 'What is the name of the contributor?',
-    },
+    // {
+    //   type: 'list',
+    //   name: 'contributors',
+    //   message: 'Where there any contributors?',
+    //   choices: ['Yes', 'No']
+    // },
     {
       type: 'input',
-      name: 'conEmail',
-      message: 'What is the email of your contributor?',
-    },
-    {
-      type: 'input',
-      name: 'conGit',
-      message: 'What is the url of the contributor?',
+      name: 'credits',
+      message: 'List your collaborators, if any, with links to their GitHub profiles.'
     },
     {
       type: 'list',
       name: 'license',
       message: 'Which type of license are you using?',
-      choices: ['MIT', 'Drivers', 'Boating', 'Hunting', 'None'],
+      choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None'],
     },
     {
       type: 'input',
       name: 'test',
-      message: 'test',
+      message: 'what command should be used to test',
+      default: 'npm test'
     },
     {
       type: 'input',
@@ -90,48 +82,39 @@ inquirer
   
   - [Installation](#installation)
   - [Usage](#usage)
-  - [Contributors](#contributors)
+  - [Credits](#credits)
   - [License](#license)
   - [Test](#test)
   - [Contact](#contact)
   
   ## Installation
   
+  To install necessary dependencies, run the following comand:
+
   ${installation}
 
   ## Usage
   
   ${usage}
+        
+  ## Credits
 
-  Provide instructions and examples for use. Include screenshots as needed.
+  ${credits}
   
-  To add a screenshot, create an assets/images folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-  
-      md
-      ![alt text](assets/images/screenshot.png)
-      
-  
-  ## Contributors
-
-  Thanks to ${conName} for their contributions, they can be reached at ${conEmail} or ${conGit}
-  
-  List your collaborators, if any, with links to their GitHub profiles.
-  
-  If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-  
-  If you followed tutorials, include links to those here as well.
   
   ## License
   
-  ${license}
+  This project uses the ${license} license.
   
   
   ## Test 
   
+  To run tests enter the following command:
+
   ${test}
 
   ## Contact
   
-  My name is ${name} if you have any questions you can reach me at ${email} or on GitHub at ${git}.
+  My name is ${name} if you have any questions you can reach me at ${email} or you can see more of my work on GitHub at ${git}.
   `;
-  //the original README.md template was modeled after the codeing bootcamp template from: (https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)
+  

@@ -71,7 +71,7 @@ inquirer
     
   });
 
-  const layOut = ({license, title, description, installation, name, email, test, usage, conGit, conName, conEmail, git }) =>
+  const layOut = ({license, title, description, installation, name, email, test, usage, credits, git }) =>
   `# ${title}
 
   ## Description

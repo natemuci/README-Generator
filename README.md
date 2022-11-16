@@ -30,7 +30,7 @@
   
   ## License
   
-  This project uses the None license.
+  This project uses no license.
   
   
   ## Test 
@@ -42,4 +42,11 @@
   ## Contact
   
   My name is Nate if you have any questions you can reach me at nate.muci@gmail.com or you can see more of my work on GitHub at https://github.com/natemuci?tab=repositories.
+
+  ## Links
+
+walkthrough:
+  https://drive.google.com/file/d/12hFT5Pi0JB_CKWceM2b6NVYu4onDUHWH/view
+Github:
+  https://github.com/natemuci?tab=repositories
   
